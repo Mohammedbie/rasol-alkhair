@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout title="Rasol Alkhair - Innovative Products & Services">
+  <Header />
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Welcome to Rasol Alkhair
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 text-blue-100">
+            An umbrella of innovative products and professional services
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/rasol-alkhair/portfolio"
+              class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            >
+              View Portfolio
+            </a>
+            <a
+              href="/rasol-alkhair/services"
+              class="bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors border-2 border-white"
+            >
+              Book Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-900">Our Services</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div class="text-blue-600 mb-4">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Consulting</h3>
+            <p class="text-gray-600 mb-4">
+              Expert guidance to help your business thrive with strategic insights and proven methodologies.
+            </p>
+            <a href="/rasol-alkhair/services" class="text-blue-600 hover:text-blue-700 font-medium">
+              Learn More →
+            </a>
+          </div>
+          <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div class="text-blue-600 mb-4">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Development</h3>
+            <p class="text-gray-600 mb-4">
+              Custom software development solutions tailored to your specific business needs and goals.
+            </p>
+            <a href="/rasol-alkhair/services" class="text-blue-600 hover:text-blue-700 font-medium">
+              Learn More →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-blue-50 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-gray-900">Ready to Get Started?</h2>
+        <p class="text-xl text-gray-600 mb-8">
+          Explore our portfolio or book a consultation to discuss your needs.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/rasol-alkhair/portfolio"
+            class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            View Our Work
+          </a>
+          <a
+            href="/rasol-alkhair/blog"
+            class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors border-2 border-blue-600"
+          >
+            Read Our Blog
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

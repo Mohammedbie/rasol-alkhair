@@ -1,0 +1,86 @@
+---
+const navItems = [
+  { name: 'Home', href: '/rasol-alkhair/' },
+  { name: 'Portfolio', href: '/rasol-alkhair/portfolio' },
+  { name: 'Blog', href: '/rasol-alkhair/blog' },
+  { name: 'Services', href: '/rasol-alkhair/services' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-white shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex-shrink-0">
+        <a href="/rasol-alkhair/" class="text-2xl font-bold text-blue-600">
+          Rasol Alkhair
+        </a>
+      </div>
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                currentPath === item.href || (item.href !== '/rasol-alkhair/' && currentPath.startsWith(item.href))
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+              }`}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div class="md:hidden">
+        <button
+          id="mobile-menu-button"
+          type="button"
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="md:hidden hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`block px-3 py-2 rounded-md text-base font-medium ${
+            currentPath === item.href || (item.href !== '/rasol-alkhair/' && currentPath.startsWith(item.href))
+              ? 'bg-blue-600 text-white'
+              : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
+          }`}
+        >
+          {item.name}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const button = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+    
+    button?.addEventListener('click', () => {
+      const isHidden = menu?.classList.contains('hidden');
+      if (isHidden) {
+        menu?.classList.remove('hidden');
+        button?.setAttribute('aria-expanded', 'true');
+      } else {
+        menu?.classList.add('hidden');
+        button?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
